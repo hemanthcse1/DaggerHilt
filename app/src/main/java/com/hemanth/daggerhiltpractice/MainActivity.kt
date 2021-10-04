@@ -15,6 +15,9 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var car: Car
 
+    @Inject
+    lateinit var carFunctions: CarFunctionImp
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,5 +26,10 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "onCreate: "+name)
 
         Log.d(TAG, "onCreate: "+car.getBatterySize())
+
+        Log.d(TAG, "onCreate: "+carFunctions.doDrive())
+
+        Log.d(TAG, "onCreate: "+carFunctions.insert().toString())
+
     }
 }
